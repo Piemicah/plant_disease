@@ -16,7 +16,7 @@ from PIL import Image
 # CONFIG
 # ======================
 DATASET = "Plantvillage"
-DATASET_ZIP = "plantvillage-dataset.zip"
+DATASET_ZIP = "Plantvillage.zip"
 MODEL_PATH = "plant_disease_model.h5"
 IMG_SIZE = (128, 128)
 BATCH_SIZE = 32
@@ -38,7 +38,7 @@ def download_dataset():
     if not data_dir.exists():
         st.info("📦 Downloading dataset from Kaggle...")
         kaggle.api.authenticate()
-        kaggle.api.dataset_download_files(DATASET, path=".", unzip=True)
+        kaggle.api.dataset_download_files("emmarex/plantdisease", path=".", unzip=True)
         # If it's zipped, extract it
         if os.path.exists(DATASET_ZIP):
             with zipfile.ZipFile(DATASET_ZIP, "r") as zip_ref:
