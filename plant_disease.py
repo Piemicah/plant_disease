@@ -12,6 +12,13 @@ from pathlib import Path
 import random
 from PIL import Image
 
+os.environ["KAGGLE_USERNAME"] = st.secrets["KAGGLE_USERNAME"]
+os.environ["KAGGLE_KEY"] = st.secrets["KAGGLE_KEY"]
+
+# from kaggle.api.kaggle_api_extended import KaggleApi
+# api = KaggleApi()
+# api.authenticate()
+
 # ======================
 # CONFIG
 # ======================
